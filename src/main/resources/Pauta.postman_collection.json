@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "9c67e821-8b16-4118-9646-23cec5ab021c",
+		"name": "Pauta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pauta",
+			"item": [
+				{
+					"name": "Add Pauta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tema\" : \"Tema 1\",\r\n    \"conteudo\" : \"Tema 1  a respeito do tema\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pautas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pautas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Pautas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pautas/findAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pautas",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Pauta By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pautas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pautas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assembleia",
+			"item": [
+				{
+					"name": "Iniciar Assembleia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pautaId\" : \"8\",\r\n    \"dataHoraInicio\" : \"2021-09-02T16:30\",\r\n    \"tempoSessao\" : \"60\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/assembleia",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"assembleia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Assembleia By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Assembleia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Associado",
+			"item": [
+				{
+					"name": "Add Associado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Associado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/associado/findAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"associado",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Votação",
+			"item": [
+				{
+					"name": "Registrar Votacao by Associado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"associadoId\" : 1,\r\n    \"assembleiaId\" : 8,\r\n    \"voto\" : \"SIM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/votacao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"votacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resultado Votacao",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"assembleiaId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/votacao/computeVotacao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"votacao",
+								"computeVotacao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
